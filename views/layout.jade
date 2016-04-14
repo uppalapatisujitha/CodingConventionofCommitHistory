@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title Popular Coding Convention on Github
+    link(rel='stylesheet', href='/popularconvention/components/bootstrap/docs/assets/css/bootstrap.css')
+    link(rel='stylesheet', href='/popularconvention/components/flat-ui/dist/css/flat-ui.css')
+    link(rel='stylesheet', href='/popularconvention/stylesheets/pictonic.css')
+    link(rel='stylesheet', href='/popularconvention/stylesheets/monokai.css')
+    link(rel='stylesheet', href='/popularconvention/stylesheets/style.css')
+  body
+      
+    block content
+    script(type='text/javascript', src='/popularconvention/components/jquery/jquery.min.js')
+    script(type='text/javascript', src='/popularconvention/components/d3/d3.min.js')
+    script(type='text/javascript', src='/popularconvention/components/handlebars.js/dist/handlebars.js')
+    script(type="text/javascript", src='/popularconvention/javascripts/script.js')
+    block template
+    script.
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1316180-4']);
+      _gaq.push(['_setDomainName', '.sideeffect.kr']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

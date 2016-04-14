@@ -1,0 +1,11 @@
+{
+  "name": "popularconvention",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "bootstrap": "~2.3.1",
+    "flat-ui": "~2.2.2",
+    "d3": "~3.1.5",
+    "handlebars.js": "~1.0.10"
+  }
+}

@@ -1,0 +1,108 @@
+extends layout
+
+block content
+  #mainwrap
+    .jumbotron
+      .container
+        h1
+          span.icon-github-01.githublogo
+          | Popular Coding Convention on Github
+
+          
+    .contents.container
+      .head
+        .socialbox
+          a.twitter-share-button(href='https://twitter.com/share', data-url='http://sideeffect.kr/popularconvention/', data-via='outsideris', data-lang='en') Tweet
+          .fb-like(data-href='http://sideeffect.kr/popularconvention/', data-send='false', data-width='150', data-show-faces='false', data-layout='button_count')
+          .g-plusone(data-size='medium', data-href='http://sideeffect.kr/popularconvention/')
+          iframe(src='http://ghbtns.com/github-btn.html?user=outsideris&repo=popularconvention&type=watch&count=true', allowtransparency='ture', frameborder='0',wscrolling='0', width='85', height='20')
+        
+      
+              
+                
+        h2 Analyze Github commits to know which convention is popular.
+        h1 Choose language.
+      .languagebox
+        .language(data-lang='js', title='JavaScript')
+          .icon-prog-js01
+          p JavaScript
+        .language(data-lang='java', title='Java')
+          .icon-prog-java
+          p Java
+        .language(data-lang='py', title='Python')
+          .icon-prog-python
+          p Python
+        .language(data-lang='scala', title='Scala')
+          .icon-prog-scala
+          p Scala
+        .language(data-lang='rb', title='Ruby')
+          .icon-prog-ruby
+          p Ruby
+        .language(data-lang='cs', title='C#')
+          .icon-prog-csharp
+          p C#
+        .language(data-lang='php', title='PHP')
+          .icon-prog-php01
+          p PHP
+      #conventionWrap
+        include notices
+      .footer-push
+  footer
+    .desc
+      - var formatWithComma = function(num) {
+      -   return (num + "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      - }
+      span last update: #{desc.lastUpdate}
+      span Analyzed period: #{desc.startDate} - #{desc.endDate}
+    .footerbar
+      .container.
+        Built by Outsider (<a href="http://blog.outsider.ne.kr">Blog</a>,
+        <a href="https://twitter.com/outsideris">Twitter</a>)
+        <br>
+        Code licenced under <a href="http://opensource.org/licenses/MIT">MIT license</a>,
+        Source code is hosted on <a href="https://github.com/outsideris/popularconvention">Github</a>
+  #fb-root
+
+block template
+  script#conventionSection(type='text/x-handlebars-template')
+    {{#each scores}}
+    {{#if title}}
+    section
+      h2
+        span.fui-checkround-24
+        | {{title}}
+      .graph
+        .chart
+          input(type='hidden', class='dataname', value='{{@key}}')
+          .sidebar
+            ul
+              {{#each column}}
+              li
+                .icons.fui-menu-24
+                .text
+                  h3 {{getScore ../this}} %
+                  | {{this.display}}
+              {{/each}}
+              li.commits based on {{getCommitCount commits}} commits
+      .examplebox
+        {{#each column}}
+        .example
+          h4
+            span.fui-bubble-16
+            | {{display}}
+          pre
+           code {{{code}}}
+        {{/each}}
+    {{/if}}
+    {{/each}}
+  script#spiner(type='text/x-handlebars-template')
+    #circularG
+      #circularG_1.circularG
+      #circularG_2.circularG
+      #circularG_3.circularG
+      #circularG_4.circularG
+      #circularG_5.circularG
+      #circularG_6.circularG
+      #circularG_7.circularG
+      #circularG_8.circularG
+
